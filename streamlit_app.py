@@ -1,5 +1,5 @@
 import streamlit as st
-import cv2
+import cv2 as cv
 import tensorflow as tf
 import numpy as np
 from tensorflow.keras.models import load_model
@@ -30,7 +30,7 @@ uploaded_file = st.file_uploader('Upload an image ', type=['jpg', 'jpeg', 'png']
 # Display uploaded image
 if uploaded_file is not None:
     image = np.array(bytearray(uploaded_file.read()), dtype=np.uint8)
-    image = cv2.imdecode(image, 1)
+    image = cv.imdecode(image, 1)
     
        
     # Predict button
